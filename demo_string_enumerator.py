@@ -37,6 +37,20 @@ class ToyInterpreter(PostOrderInterpreter):
 
 def main():
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i0', '--input0', type=str)
+    parser.add_argument('-i1', '--input1', type=str)
+    parser.add_argument('-o', '--output', type=str)
+    parser.add_argument('-l', '--length', type=int)
+    args = parser.parse_args()
+    loc_val = args.length
+
+    input0 = args.input0
+    input1 = args.input1
+    output = args.output
+
+    depth_val = loc_val + 1
+
     logger.info('Parsing Spec...')
     spec = S.parse_file('example/markdown.tyrell')
     logger.info('Parsing succeeded')
@@ -46,7 +60,7 @@ def main():
     logger.info('Building synthesizer...')
     synthesizer = Synthesizer(
         # enumerator=SmtEnumerator(spec, depth=3, loc=1), # plus(@param1, @param0) / plus(@param0, @param1)
-        enumerator=BidirectEnumerator(spec, depth=1, loc=1, sk_queue=sketches), # plus(plus(@param0, const(_apple_)), @param1)
+        enumerator=BidirectEnumerator(spec, depth=depth_val, loc=loc_val, sk_queue=sketches), # plus(plus(@param0, const(_apple_)), @param1)
         decider=ExampleConstraintDecider(
             spec=spec,
             interpreter=ToyInterpreter(),
