@@ -1,0 +1,2 @@
+1. No, execution is not deterministic.
+2. The enumeration order is decided by ExampleConstraintPruningDecider.

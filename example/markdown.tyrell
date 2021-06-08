@@ -1,0 +1,13 @@
+value Empty;
+value Str;
+
+program Toy(Str, Str) -> Str;
+func empty: Empty -> Empty;
+
+func make_header: Str -> Str;
+func make_header2: Str -> Str;
+func make_header3: Str -> Str;
+func paragraph: Str -> Str;
+func newline: Str -> Str, Str;
+func bold: Str -> Str;
+func italic: Str -> Str;

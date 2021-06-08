@@ -1,0 +1,7 @@
+1. They both generate the same answer which is:
+[info] Solution found: spread(unite(gather(@param0, ['3', '4']), 2, 3), 2, 3)
+
+No Neural Network: 46.21s user 2.59s system 95% cpu 50.835 total
+With Neural Network: 15.00s user 1.59s system 99% cpu 16.600 total
+
+2. The most important part is the "long format and spread them to wide format" which easily describes the main part of the problem. Also, the example provided below provides very detailed information to the interpreter. 
