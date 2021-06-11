@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import argparse
 from tyrell.enumerator.bidirection_smt import BidirectEnumerator
 import tyrell.spec as S
 from tyrell.interpreter import PostOrderInterpreter
